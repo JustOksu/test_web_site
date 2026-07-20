@@ -69,7 +69,11 @@
 }
 
 .advanages-list-icon {
-  fill: var(--color-accent);
+  // іконки спрайта двоколірні: --color2 (лінії) + --color3 (акцент).
+  // за замовчуванням --color2 темний (#212121) і зникає на темному фоні,
+  // тож перевизначаємо на світлий.
+  --color2: var(--color-heading);
+  --color3: var(--color-accent);
 }
 
 .advantages-list-link {
