@@ -12,24 +12,25 @@
 }
 
 :root {
-  --color-bg: #ffffff;
-  --color-surface: #ffffff;
-  --color-surface-2: #f5f4fa;
-  --color-header-bg: #ffffff;
-  --color-footer-bg: #2f303a;
-  --color-heading: #212121;
-  --color-text: #212121;
-  --color-text-muted: #757575;
-  --color-accent: #2196f3;
-  --color-accent-hover: #188ce8;
+  color-scheme: dark;
+  --color-bg: #111219;
+  --color-surface-2: #1b1f29;
+  --color-surface: #282e3b;
+  --color-header-bg: rgba(20, 22, 29, 0.85);
+  --color-footer-bg: #0f1116;
+  --color-heading: #f4f6fb;
+  --color-text: #d9dde8;
+  --color-text-muted: #a6b0c2;
+  --color-accent: #4c8dff;
+  --color-accent-hover: #6ea6ff;
   --color-on-accent: #ffffff;
-  --color-border: #ececec;
-  --color-border-strong: rgba(33, 33, 33, 0.2);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.16);
-  --hero-overlay-1: rgba(47, 48, 58, 0.4);
-  --hero-overlay-2: rgba(47, 48, 58, 0.4);
+  --color-border: rgba(255, 255, 255, 0.14);
+  --color-border-strong: rgba(255, 255, 255, 0.28);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.65);
+  --hero-overlay-1: rgba(9, 11, 16, 0.55);
+  --hero-overlay-2: rgba(9, 11, 16, 0.78);
   --primary-text-color: var(--color-heading);
   --secondary-text-color: var(--color-text-muted);
   --accent-text-color: var(--color-accent);
@@ -1048,11 +1049,15 @@ textarea:focus-visible {
 
 .list-team {
   box-shadow: var(--shadow-sm);
-  border-radius: 0px 0px 12px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
   overflow: hidden;
   text-align: center;
   background-color: var(--color-surface);
-  transition: transform 300ms ease, box-shadow 300ms ease;
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+.list-team:hover {
+  border-color: var(--color-accent);
 }
 .list-team:hover {
   transform: translateY(-8px);
@@ -1293,6 +1298,7 @@ textarea:focus-visible {
 
 .footer-color {
   background-color: var(--head-background-color);
+  border-top: 1px solid var(--color-border);
   padding-top: 60px;
   padding-bottom: 60px;
   width: 100%;
@@ -1565,8 +1571,8 @@ textarea:focus-visible {
   border-radius: 4px;
   padding: 6px 22px;
   text-align: center;
-  border: 1px solid transparent;
-  transition: color 250ms ease, background-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+  border: 1px solid var(--color-border);
+  transition: color 250ms ease, background-color 250ms ease, box-shadow 250ms ease, transform 250ms ease, border-color 250ms ease;
 }
 
 .site-nav.list-portfolio {
@@ -1597,14 +1603,16 @@ textarea:focus-visible {
 .btn-profile:focus {
   color: var(--color-on-accent);
   background-color: var(--color-accent);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(76, 141, 255, 0.35);
   transform: translateY(-2px);
 }
 
 .btn-profile.active {
   color: var(--color-on-accent);
   background-color: var(--color-accent);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(76, 141, 255, 0.35);
 }
 
 @media screen and (min-width: 480px) {
@@ -1645,9 +1653,7 @@ textarea:focus-visible {
   padding-bottom: 20px;
   padding-left: 24px;
   padding-right: 24px;
-  border-left: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
 }
 
 .site-nav.list-images.flex-start-aligned {
@@ -1667,13 +1673,15 @@ textarea:focus-visible {
   flex-direction: column;
   height: 100%;
   background: var(--color-surface);
-  transition: transform 300ms ease, box-shadow 300ms ease;
+  border: 1px solid var(--color-border);
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
 }
 
 .card-portfolio:hover,
 .card-portfolio:focus {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
 }
 
 .list-portfolio-img {

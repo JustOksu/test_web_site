@@ -42,9 +42,9 @@
   border-radius: 4px;
   padding: 6px 22px;
   text-align: center;
-  border: 1px solid transparent;
+  border: 1px solid var(--color-border);
   transition: color 250ms ease, background-color 250ms ease,
-    box-shadow 250ms ease, transform 250ms ease;
+    box-shadow 250ms ease, transform 250ms ease, border-color 250ms ease;
 }
 
 .site-nav.list-portfolio {
@@ -71,7 +71,8 @@
 .btn-profile:focus {
   color: var(--color-on-accent);
   background-color: var(--color-accent);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(76, 141, 255, 0.35);
   transform: translateY(-2px);
 }
 
@@ -79,5 +80,6 @@
 .btn-profile.active {
   color: var(--color-on-accent);
   background-color: var(--color-accent);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(76, 141, 255, 0.35);
 }
