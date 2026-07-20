@@ -1,5 +1,11 @@
 .header {
-  border-bottom: 1px solid #ececec;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-header-bg);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
 }
 
 .logo {
@@ -7,12 +13,17 @@
   padding-top: 24px;
   padding-bottom: 25px;
   text-decoration: none;
-  color: var(--primary-text-color);
+  color: var(--color-heading);
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.03em;
+  transition: opacity 250ms ease;
+}
+
+.logo:hover {
+  opacity: 0.85;
 }
 
 .logo-accent {
@@ -59,7 +70,7 @@
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background-color: #2196f3;
+  background-color: var(--color-accent);
   left: 0;
   bottom: 0;
 }
@@ -115,8 +126,12 @@
   font-size: 14px;
   line-height: 1.1;
   letter-spacing: 0.02em;
-  color: var(--primary-text-color);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-heading);
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section {
@@ -125,7 +140,7 @@
 }
 
 .contacts-icon {
-  fill: #757575;
+  fill: currentColor;
   margin-right: 10px;
 }
 
@@ -138,8 +153,8 @@
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  color: #757575;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-text-muted);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   @include tablet {
     margin-bottom: 10px;
   }
@@ -148,18 +163,34 @@
   }
 }
 
-.contacts:hover .contacts-icon,
-.contacts:focus .contacts-icon {
-  fill: #2196f3;
-}
-
 .contacts:hover,
 .contacts:focus {
-  color: #2196f3;
+  color: var(--color-accent);
 }
 
 .headder-contact-list:nth-last-child(2) {
   margin-right: 30px;
+}
+
+// Компактніша навігація на планшеті, щоб шапка вміщувалась без гориз. скролу
+@include tablet {
+  .logo {
+    margin-right: 40px;
+  }
+  .contacto .link {
+    margin-right: 24px;
+  }
+  .contacto li:last-child .link {
+    margin-right: 0;
+  }
+}
+@include desktop {
+  .logo {
+    margin-right: 93px;
+  }
+  .contacto .link {
+    margin-right: 50px;
+  }
 }
 
 // Mobile menu
@@ -171,6 +202,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
+  color: var(--color-heading);
   @include tablet {
     display: none;
   }
@@ -179,18 +211,25 @@
   }
 }
 
+.menu-open-btn svg,
+.menu-close-btn svg {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
 .menu-close-btn {
   margin-bottom: 8px;
 }
 
 .mobile-menu {
-  z-index: 5;
+  z-index: 15;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ffffff;
+  background-color: var(--color-bg);
   width: 100vw;
   height: 100vh;
+  overflow-y: auto;
   padding-top: 21px;
   padding-bottom: 48px;
   .container {
@@ -212,7 +251,7 @@
 }
 
 .mobile-menu-contacto .mobile-menu-item.current {
-  color: #2196f3;
+  color: var(--color-accent);
 }
 
 .mobile-menu-link:not(:last-child) {
@@ -226,7 +265,11 @@
   line-height: 1.2;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #212121;
+  color: var(--color-heading);
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .curent .mobile-menu-item {
@@ -247,7 +290,7 @@
   font-size: 24px;
   line-height: calc(28 / 24);
   letter-spacing: 0.02em;
-  color: #757575;
+  color: var(--color-text-muted);
 }
 
 .mob-connect-tel {
@@ -256,13 +299,14 @@
   font-size: 34px;
   line-height: calc(40 / 34);
   letter-spacing: 0.02em;
-  color: #2196f3;
+  color: var(--color-accent);
 }
 
 .mob-soc-list {
   list-style: none;
   margin-top: 64px;
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   align-items: center;
@@ -270,7 +314,7 @@
 
 .mob-soc-link:not(:first-child):before {
   content: "";
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: 1px solid var(--color-border-strong);
   transform: rotate(90deg);
   margin-right: 10px;
 }
@@ -280,6 +324,6 @@
   font-size: 18px;
   line-height: calc(22 / 18);
   letter-spacing: 0.02em;
-  color: #2196f3;
+  color: var(--color-accent);
   text-decoration: none;
 }

@@ -37,14 +37,14 @@
   line-height: 1.6;
   letter-spacing: 0.03em;
   font-family: "Roboto", sans-serif;
-  color: var(--primary-text-color);
-  background-color: var(--secondary -backgroud-color);
+  color: var(--color-heading);
+  background-color: var(--color-surface-2);
   border-radius: 4px;
   padding: 6px 22px;
   text-align: center;
-  border: transparent;
-  border-radius: 4px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  transition: color 250ms ease, background-color 250ms ease,
+    box-shadow 250ms ease, transform 250ms ease;
 }
 
 .site-nav.list-portfolio {
@@ -69,6 +69,15 @@
 
 .btn-profile:hover,
 .btn-profile:focus {
-  color: var(--secondary-backgroud-color);
-  background-color: var(--accent-text-color);
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  transform: translateY(-2px);
+}
+
+// Активна кнопка фільтра
+.btn-profile.active {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }

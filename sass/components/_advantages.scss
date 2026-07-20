@@ -10,12 +10,13 @@
 .about-work {
   @media screen and (min-width: 480px) {
     width: 450px;
+    max-width: 100%;
   }
   @media screen and (min-width: 768px) {
-    width: 354px;
+    width: calc((100% - 30px) / 2);
   }
   @media screen and (min-width: 1200px) {
-    width: 270px;
+    width: calc((100% - 90px) / 4);
   }
 }
 
@@ -56,9 +57,19 @@
   justify-content: center;
   align-items: center;
   height: 120px;
-  background: #f5f4fa;
-  border-radius: 4px;
+  background: var(--color-surface-2);
+  border-radius: 12px;
   margin-bottom: 30px;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.about-work:hover .advantages-list {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.advanages-list-icon {
+  fill: var(--color-accent);
 }
 
 .advantages-list-link {

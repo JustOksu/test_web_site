@@ -1,11 +1,15 @@
 .backdrop {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   position: fixed;
   top: 0;
-  transition: opacity 250ms, visibility 250ms;
-  overflow-y: scroll;
+  left: 0;
+  z-index: 20;
+  transition: opacity 300ms, visibility 300ms;
+  overflow-y: auto;
 }
 
 .backdrop.is-hidden .modal {
@@ -16,7 +20,7 @@
   @include mobile {
     min-width: 450px;
     min-height: 609px;
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -42,7 +46,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--color-surface);
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -50,9 +54,19 @@
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-close-svg {
+  fill: var(--color-heading);
+  transition: fill 250ms ease;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  border-color: var(--color-accent);
+}
+
 .modal-close-btn:hover .modal-close-svg,
 .modal-close-btn:focus .modal-close-svg {
-  fill: #2196f3;
+  fill: var(--color-accent);
 }
 
 .is-hidden {
@@ -67,7 +81,7 @@
   line-height: 1;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #212121;
+  color: var(--color-heading);
   margin-bottom: 12px;
 }
 
@@ -82,7 +96,7 @@
   line-height: 1.1;
   letter-spacing: 0.01em;
   margin-bottom: 4px;
-  color: #757575;
+  color: var(--color-text-muted);
 }
 
 .input-wrap {
@@ -96,14 +110,15 @@
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--color-text-muted);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input {
   width: 100%;
   height: 40px;
   margin-bottom: 10px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: 1px solid var(--color-border-strong);
   border-radius: 4px;
   padding-left: 42px;
   outline: none;
@@ -111,11 +126,11 @@
 }
 
 .modal-input:focus {
-  border-color: #2196f3;
+  border-color: var(--color-accent);
 }
 
 .modal-input:focus + .modal-icon {
-  fill: #2196f3;
+  fill: var(--color-accent);
 }
 
 .modal-text {
@@ -123,7 +138,7 @@
   padding: 12px 16px;
   width: 100%;
   height: 120px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: 1px solid var(--color-border-strong);
   border-radius: 4px;
   font-weight: 400;
   font-size: 14px;
@@ -132,7 +147,7 @@
 }
 
 .modal-text:focus {
-  border-color: #2196f3;
+  border-color: var(--color-accent);
   outline: none;
 }
 
@@ -153,7 +168,7 @@
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: 0.03em;
-    color: #757575;
+    color: var(--color-text-muted);
     border: none;
     display: flex;
     margin-bottom: 30px;
@@ -169,7 +184,7 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
-  border: 1px solid #212121;
+  border: 1px solid var(--color-border-strong);
   margin-right: 8px;
 }
 
@@ -182,7 +197,7 @@
 }
 
 .modal-check:checked + .check-text::before {
-  background-color: #2196f3;
+  background-color: var(--color-accent);
   background-image: url(../img/icon/check.svg);
   border: none;
   background-repeat: no-repeat;
@@ -190,7 +205,7 @@
 }
 
 .modal-check:focus + .check-text::before {
-  background-color: #2196f3;
+  background-color: var(--color-accent);
   background-image: url(../img/icon/check.svg);
   border: none;
   background-repeat: no-repeat;
@@ -203,12 +218,12 @@
     font-size: 12px;
     line-height: calc(14 / 12);
     letter-spacing: 0.03em;
-    color: #2196f3;
+    color: var(--color-accent);
   }
   @include tablet {
   }
   @include desktop {
-    color: #2196f3;
+    color: var(--color-accent);
     font-weight: 400;
     font-size: 14px;
     line-height: 1.7;
@@ -227,12 +242,21 @@
   text-align: center;
   justify-content: center;
   letter-spacing: 0.06em;
-  color: #ffffff;
-  background: #188ce8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  box-shadow: 0 6px 18px rgba(33, 150, 243, 0.35);
   border-radius: 4px;
   padding: 10px 55px;
   border-color: transparent;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 250ms ease, transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(33, 150, 243, 0.45);
 }

@@ -1,8 +1,39 @@
+// ===========================================================================
+//  Кольори сайту (світла тема — як в оригіналі).
+//  Семантичні токени лишаються, тож компоненти працюють без змін.
+// ===========================================================================
+
 :root {
-  --primary-text-color: #212121;
-  --secondary-text-color: #757575;
-  --accent-text-color: #2196f3;
-  --secondary-backgroud-color: #f5f4fa;
-  --primary-background-color: #e5e5e5;
-  --head-background-color: #2f303a;
+  // Семантичні токени
+  --color-bg: #ffffff; // тло сторінки
+  --color-surface: #ffffff; // картки, шапка, модалка
+  --color-surface-2: #f5f4fa; // вторинні секції, підкладка іконок
+  --color-header-bg: #ffffff;
+  --color-footer-bg: #2f303a;
+
+  --color-heading: #212121;
+  --color-text: #212121;
+  --color-text-muted: #757575;
+
+  --color-accent: #2196f3;
+  --color-accent-hover: #188ce8;
+  --color-on-accent: #ffffff;
+
+  --color-border: #ececec;
+  --color-border-strong: rgba(33, 33, 33, 0.2);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.16);
+
+  --hero-overlay-1: rgba(47, 48, 58, 0.4);
+  --hero-overlay-2: rgba(47, 48, 58, 0.4);
+
+  // Легасі-аліаси — сумісність зі старими посиланнями
+  --primary-text-color: var(--color-heading);
+  --secondary-text-color: var(--color-text-muted);
+  --accent-text-color: var(--color-accent);
+  --secondary-backgroud-color: var(--color-surface-2);
+  --primary-background-color: var(--color-bg);
+  --head-background-color: var(--color-footer-bg);
 }

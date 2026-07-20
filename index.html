@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="WebStudio — ефективні рішення для вашого бізнесу: вебсайти, застосунки, дизайн та маркетинг."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +24,7 @@
   </head>
 
   <body class="page">
-    <!-- Шапка сайта -->
+    <!-- Шапка сайту -->
 
     <header class="header">
       <div class="container hat">
@@ -30,12 +34,14 @@
           >
           <ul class="contacto">
             <li>
-              <a href="./index.html" class="link current">Студия</a>
+              <a href="./index.html" class="link current">Студія</a>
             </li>
             <li>
-              <a href="./portfolio.html" class="link">Портфолио</a>
+              <a href="./portfolio.html" class="link">Портфоліо</a>
             </li>
-            <li><a href="" class="link">Контакты</a></li>
+            <li>
+              <button type="button" class="link" data-modal-open>Контакти</button>
+            </li>
           </ul>
         </nav>
         <ul class="headder-contact">
@@ -57,7 +63,7 @@
           </li>
         </ul>
 
-        <!-- Mobile menu -->
+        <!-- Мобільне меню -->
 
         <button type="button" class="menu-open-btn">
           <svg class="" width="40" height="40">
@@ -69,9 +75,9 @@
         </button>
       </div>
 
-      <!-- Hidden mobile menu -->
+      <!-- Приховане мобільне меню -->
 
-      <div class="mobile-menu">
+      <div class="mobile-menu is-hidden">
         <div class="container">
           <div class="mob-menu-top">
             <button type="button" class="menu-close-btn">
@@ -86,16 +92,18 @@
             <ul class="mobile-menu-contacto">
               <li class="mobile-menu-link">
                 <a href="./index.html" class="mobile-menu-item current"
-                  >Студия</a
+                  >Студія</a
                 >
               </li>
               <li class="mobile-menu-link">
                 <a href="./portfolio.html" class="mobile-menu-item"
-                  >Портфолио</a
+                  >Портфоліо</a
                 >
               </li>
               <li class="mobile-menu-link">
-                <a href="" class="mobile-menu-item">Контакты</a>
+                <button type="button" class="mobile-menu-item" data-modal-open>
+                  Контакти
+                </button>
               </li>
             </ul>
           </div>
@@ -172,18 +180,18 @@
     <main>
       <section class="section section-hero">
         <div class="hero container">
-          <h1 class="hero-title">ЭФФЕКТИВНЫЕ РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА</h1>
+          <h1 class="hero-title">ЕФЕКТИВНІ РІШЕННЯ ДЛЯ ВАШОГО БІЗНЕСУ</h1>
           <button type="button" class="btn-index" data-modal-open>
-            Заказать услугу
+            Замовити послугу
           </button>
         </div>
       </section>
 
-      <!-- Преимущества -->
+      <!-- Переваги -->
 
       <section class="section">
         <div class="container">
-          <ul class="site-nav list">
+          <ul class="site-nav list reveal">
             <li class="about-work">
               <div class="advantages-list">
                 <a href="" class="advantages-list-link">
@@ -192,10 +200,10 @@
                   </svg>
                 </a>
               </div>
-              <h3 class="section-title">Внимание к деталям</h3>
+              <h3 class="section-title">Увага до деталей</h3>
               <p class="text">
-                Идейные соображения, а также начало повседневной работы по
-                формированию позиции.
+                Ідейні міркування, а також початок повсякденної роботи з
+                формування позиції.
               </p>
             </li>
             <li class="about-work">
@@ -206,10 +214,10 @@
                   </svg>
                 </a>
               </div>
-              <h3 class="section-title">Пунктуальность</h3>
+              <h3 class="section-title">Пунктуальність</h3>
               <p class="text">
-                Задача организации, в особенности же рамки и место обучения
-                кадров влечет за собой.
+                Завдання організації, а особливо рамки й місце навчання кадрів,
+                тягне за собою.
               </p>
             </li>
             <li class="about-work">
@@ -220,10 +228,10 @@
                   </svg>
                 </a>
               </div>
-              <h3 class="section-title">Планирование</h3>
+              <h3 class="section-title">Планування</h3>
               <p class="text">
-                Равным образом консультация с широким активом в значительной
-                степени обуславливает.
+                Так само консультація з широким активом значною мірою
+                зумовлює.
               </p>
             </li>
             <li class="about-work">
@@ -234,17 +242,17 @@
                   </svg>
                 </a>
               </div>
-              <h3 class="section-title">Современные технологии</h3>
+              <h3 class="section-title">Сучасні технології</h3>
               <p class="text">
-                Значимость этих проблем настолько очевидна, что реализация
-                плановых заданий.
+                Значущість цих проблем настільки очевидна, що реалізація
+                планових завдань.
               </p>
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- Занятия -->
+      <!-- Напрямки -->
 
       <!-- <section class="section section-wwd">
         <div class="container wwd-container">
@@ -289,7 +297,7 @@
       <section class="section sectionteam">
         <div class="container">
           <h2 class="htwotitle team-img">Наша команда</h2>
-          <ul class="command-list">
+          <ul class="command-list reveal">
             <li class="list-team">
               <picture>
                 <source
@@ -318,7 +326,7 @@
                 />
               </picture>
 
-              <h3 class="ourteam">Игорь Демьяненко</h3>
+              <h3 class="ourteam">Ігор Дем'яненко</h3>
               <p lang="en" class="textteam">Product Designer</p>
               <ul class="master-soc-list list">
                 <li class="masters-soc-item">
@@ -378,7 +386,7 @@
                   alt="Команда"
                 />
               </picture>
-              <h3 class="ourteam">Ольга Репина</h3>
+              <h3 class="ourteam">Ольга Рєпіна</h3>
               <p lang="en" class="textteam">Frontend Developer</p>
               <ul class="master-soc-list list">
                 <li class="masters-soc-item">
@@ -438,7 +446,7 @@
                   alt="Команда"
                 />
               </picture>
-              <h3 class="ourteam">Николай Тарасов</h3>
+              <h3 class="ourteam">Микола Тарасов</h3>
               <p lang="en" class="textteam">Marketing</p>
               <ul class="master-soc-list list">
                 <li class="masters-soc-item">
@@ -498,7 +506,7 @@
                   alt="Команда"
                 />
               </picture>
-              <h3 class="ourteam">Михаил Ермаков</h3>
+              <h3 class="ourteam">Михайло Єрмаков</h3>
               <p lang="en" class="textteam">UI Designer</p>
               <ul class="master-soc-list list">
                 <li class="masters-soc-item">
@@ -535,12 +543,12 @@
         </div>
       </section>
 
-      <!-- Постоянные клиенты -->
+      <!-- Постійні клієнти -->
 
       <section class="permanent-clients">
         <div class="container">
-          <h2 class="htwotitle permanent-clients-h2">Постоянные клиенты</h2>
-          <ul class="permanent-clients-list">
+          <h2 class="htwotitle permanent-clients-h2">Постійні клієнти</h2>
+          <ul class="permanent-clients-list reveal">
             <li class="permanent-client-item">
               <a href="" class="permanent-client-link">
                 <svg class="permanent-client-icon" width="106" height="60">
@@ -588,7 +596,7 @@
       </section>
     </main>
 
-    <!-- Подвал -->
+    <!-- Підвал -->
 
     <footer class="footer-color">
       <div class="container footer">
@@ -603,7 +611,7 @@
                 target="_blank"
                 class="contactsfot map"
                 rel="noopener nofollow noreferrer"
-                >г. Киев, пр-т Леси Украинки, 26</a
+                >м. Київ, пр-т Лесі Українки, 26</a
               >
             </li>
             <li>
@@ -620,7 +628,7 @@
         </div>
 
         <div class="footer-right">
-          <p class="footer-join">ПРИСОЕДИНЯЙТЕСЬ</p>
+          <p class="footer-join">ПРИЄДНУЙТЕСЯ</p>
           <ul class="master-soc-list-footer list">
             <li class="masters-soc-item-footer">
               <a href="" class="master-soc-link-footer">
@@ -655,14 +663,14 @@
 
         <div class="footer-mail">
           <form class="footer-form-join">
-            <p class="footer-join">Подпишитесь на рассылку</p>
+            <p class="footer-join">Підпишіться на розсилку</p>
             <input
               type="email"
               class="footer-mail-input"
               placeholder="E-mail"
             />
             <button type="submit" class="footer-btn-join">
-              Подписаться
+              Підписатися
               <span
                 ><svg class="icon-send" width="24" height="24">
                   <use href="./img/icon/icons.svg#icon-send"></use>
@@ -674,7 +682,7 @@
       </div>
     </footer>
 
-    <!-- Модальное окно -->
+    <!-- Модальне вікно -->
 
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
@@ -683,10 +691,10 @@
             <use href="./img/icon/modal-icons.svg#icon-modal-close"></use>
           </svg>
         </button>
-        <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+        <p class="modal-title">Залиште свої дані, ми вам зателефонуємо</p>
         <form>
           <div class="modal-field">
-            <label for="user-name" class="modal-label">Имя</label>
+            <label for="user-name" class="modal-label">Ім'я</label>
             <div class="input-wrap">
               <input
                 type="text"
@@ -724,7 +732,7 @@
             </div>
           </div>
           <div class="modal-field">
-            <label for="user-email" class="modal-label">Почта</label>
+            <label for="user-email" class="modal-label">Пошта</label>
             <div class="input-wrap">
               <input
                 type="text"
@@ -743,12 +751,12 @@
             </div>
           </div>
           <div class="modal-field">
-            <label for="user-text" class="modal-label">Комментарий</label>
+            <label for="user-text" class="modal-label">Коментар</label>
             <textarea
               name="user-text"
               id="user-text"
               class="modal-text"
-              placeholder="Введите текст"
+              placeholder="Введіть текст"
             ></textarea>
           </div>
           <input
@@ -759,17 +767,18 @@
             id="privacy"
           />
           <label for="privacy" class="check-text"
-            >Соглашаюсь с рассылкой и принимаю
+            >Погоджуюсь із розсилкою та приймаю
             <span>
-              <a href="" class="privacy-label">Условия договора</a>
+              <a href="" class="privacy-label">Умови договору</a>
             </span></label
           >
-          <button type="submit" class="modal-btn">Отправить</button>
+          <button type="submit" class="modal-btn">Надіслати</button>
         </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/reveal.js"></script>
   </body>
 </html>
 
